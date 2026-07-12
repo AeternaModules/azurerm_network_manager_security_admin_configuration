@@ -1,3 +1,7 @@
+output "network_manager_security_admin_configurations_id" {
+  description = "Map of id values across all network_manager_security_admin_configurations, keyed the same as var.network_manager_security_admin_configurations"
+  value       = { for k, v in azurerm_network_manager_security_admin_configuration.network_manager_security_admin_configurations : k => v.id }
+}
 output "network_manager_security_admin_configurations_apply_on_network_intent_policy_based_services" {
   description = "Map of apply_on_network_intent_policy_based_services values across all network_manager_security_admin_configurations, keyed the same as var.network_manager_security_admin_configurations"
   value       = { for k, v in azurerm_network_manager_security_admin_configuration.network_manager_security_admin_configurations : k => v.apply_on_network_intent_policy_based_services }
